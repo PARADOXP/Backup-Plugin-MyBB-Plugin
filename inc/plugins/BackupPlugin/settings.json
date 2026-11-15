@@ -1,0 +1,73 @@
+{
+  "group": {
+    "name": "backup_plugin",
+    "title": "Backup Plugin Settings",
+    "description": "Control how the Backup Plugin scans and packs plugin files."
+  },
+  "settings": [
+    {
+      "name": "scan_mode",
+      "title": "Scan Mode",
+      "description": "Balanced: every file owned by the plugin folder is included, plus name-matched files whose content really references the plugin. Strict: only the plugin folder plus files that plugin code actually loads (require/include) are included.",
+      "optionscode": "select\nbalanced=Balanced (verified names)\nstrict=Strict (ownership only)",
+      "value": "balanced",
+      "disporder": "1"
+    },
+    {
+      "name": "excluded_paths",
+      "title": "Excluded Paths",
+      "description": "One path per line, relative to the forum root. A folder entry excludes the whole tree. Wildcards are allowed (for example *.log or inc/plugins/*/backups). Exclusions always win over everything else.",
+      "optionscode": "textarea",
+      "value": "inc/plugins/temp\nBackup Plugins\nadmin/backups\nuploads\n.git\nnode_modules",
+      "disporder": "2"
+    },
+    {
+      "name": "included_paths",
+      "title": "Extra Paths To Include",
+      "description": "One path per line, relative to the forum root. These folders or files are always treated as part of the plugin even when they live outside the plugin folder. Use it when a plugin keeps assets or admin pages somewhere else.",
+      "optionscode": "textarea",
+      "value": "",
+      "disporder": "3"
+    },
+    {
+      "name": "include_pluginlibrary",
+      "title": "Back Up PluginLibrary",
+      "description": "When the plugin being backed up uses the PluginLibrary plugin, add inc/plugins/pluginlibrary.php to the package. Turn this off to ship the plugin without the shared library.",
+      "optionscode": "yesno",
+      "value": "1",
+      "disporder": "4"
+    },
+    {
+      "name": "include_root_scripts",
+      "title": "Back Up Root Scripts",
+      "description": "Include entry scripts placed in the forum root (for example sw.js or store.php) when they really belong to the plugin. A file must reference the plugin folder or use the plugin prefix.",
+      "optionscode": "yesno",
+      "value": "1",
+      "disporder": "5"
+    },
+    {
+      "name": "include_external_dependencies",
+      "title": "Back Up Other Plugins",
+      "description": "Include files from other plugins that the plugin hard loads with require/include. Leave this off to keep every package limited to one plugin.",
+      "optionscode": "yesno",
+      "value": "0",
+      "disporder": "6"
+    },
+    {
+      "name": "max_file_size",
+      "title": "Maximum File Size (KB)",
+      "description": "Skip any single file larger than this size in kilobytes. Set to 0 to allow every file.",
+      "optionscode": "numeric",
+      "value": "0",
+      "disporder": "7"
+    },
+    {
+      "name": "show_skipped",
+      "title": "Show Skipped Files",
+      "description": "List the files that were left out of the package on the scan page, together with the reason each one was skipped.",
+      "optionscode": "yesno",
+      "value": "1",
+      "disporder": "8"
+    }
+  ]
+}

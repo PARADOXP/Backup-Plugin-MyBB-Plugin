@@ -1,0 +1,14 @@
+<p class="backup_plugin_hint">{$lang->backup_plugin_skipped_hint}</p>
+<table class="general backup_plugin_skipped">
+    <thead>
+        <tr>
+            <th width="30"><input type="checkbox" id="backup_plugin_select_all" title="{$lang->backup_plugin_select_all}" /></th>
+            <th>{$lang->backup_plugin_skipped_label} ({$backup_plugin_skip_count})</th>
+            <th width="220">{$lang->backup_plugin_column_skip_note}</th>
+            <th style="text-align: right;" width="90">{$lang->backup_plugin_column_size}</th>
+        </tr>
+    </thead>
+    <tbody>
+{$backup_plugin_skipped_rows}
+    </tbody>
+</table>
