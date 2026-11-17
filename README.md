@@ -1,5 +1,9 @@
 # Backup Plugin for MyBB
 
+<p align="center">
+  <img src=".github/backup-plugin-cover.svg" alt="Backup Plugin for MyBB" width="100%" />
+</p>
+
 Backup Plugin adds a **Backup** action to every row of the MyBB Admin CP plugin
 manager. It scans a plugin, shows exactly which files belong to it, and writes a
 ZIP package that mirrors the forum directory structure.
